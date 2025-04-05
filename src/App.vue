@@ -135,7 +135,7 @@ body {
 .add-btn,
 .save-btn {
   padding: 0.75rem 1.5rem;
-  background-color: #007bff;
+  background-color: #fff000;
   color: white;
   border: none;
   border-radius: 5px;
