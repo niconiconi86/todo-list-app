@@ -15,7 +15,6 @@
 
       <ul class="todo-list">
         <li class="todo-item" v-for="(todo, index) in filteredTodoList" :key="index">
-          <!-- View Mode -->
           <div v-if="!todo.editing">
             <span class="todo-text">{{ todo.text }}</span>
             <div class="actions">
@@ -24,7 +23,6 @@
             </div>
           </div>
 
-          <!-- Edit Mode -->
           <div v-else>
             <input
               type="text"
@@ -47,7 +45,7 @@ export default {
   data() {
     return {
       inputTodo: '',
-      todoList: [], // Each todo will now have { text: string, editing: boolean }
+      todoList: [],
     };
   },
   methods: {
@@ -68,7 +66,6 @@ export default {
     },
     saveEdit(index) {
       if (this.todoList[index].text.trim() === '') {
-        // Remove empty todos
         this.deleteTodo(this.todoList[index]);
       } else {
         this.todoList[index].editing = false;
@@ -84,7 +81,7 @@ export default {
 </script>
 
 <style>
-/* General Styles */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -114,7 +111,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Input Section */
+
 .input-section {
   display: flex;
   gap: 1rem;
@@ -152,7 +149,6 @@ body {
   background-color: #0056b3;
 }
 
-/* Todo List */
 .todo-list {
   list-style: none;
   padding: 0;
